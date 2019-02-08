@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## Unreleased
 
 ### Added
+- Simple pre-flight check confirms ruby, python3, golang and php are available
 - This CHANGELOG.md to track what's happening with this software.
 - An altogether too brief [README.md](README.md).
 - Licensed (MIT) this work, see [LICENSE.md](LICENSE.md) for details.
