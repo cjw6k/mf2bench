@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## Unreleased
 
 ### Added
+- haskell/microformats2-parser
 - elixir/microformats2
 - perl/microformats2
 - benchmarking

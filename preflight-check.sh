@@ -134,6 +134,15 @@ main() {
 		"https://elixir-lang.org/install.html" \
 		elixir_microformats2[@]
 
+	local haskell_microformats2_parser=("haskell/microformats2-parser" \
+		"cd harness/haskell/microformats2-parser; stack exec preflight-check && if [[ ! -f mf2 ]]; then echo 'Create a symbolic link to the mf2 executable in harness/haskell/microformats2-parser' 1>&2 && return 1; fi" \
+		"https://hackage.haskell.org/package/microformats2-parser" \
+		"haskell/microformats2-parser|harness/haskell/microformats2-parser/mf2" \
+	)
+	check_language "Haskell" "ghci" \
+		"https://www.haskell.org/platform/linux.html" \
+		haskell_microformats2_parser[@]
+
 	[[ -f "$tower_checklist" ]] && rm "$tower_checklist"
 
 	echo
