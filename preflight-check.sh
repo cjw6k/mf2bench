@@ -71,8 +71,8 @@ main() {
 	local node_microformats_parser=("node/microformats-parser" "node harness/node/microformats-parser/preflight-check.js" "https://www.npmjs.com/package/microformat-node" "node/microformats-parser|node harness/node/microformats-parser/mf2.js")
 	check_language "Node" "node" "https://nodejs.org/en/download/package-manager/" node_microformats_parser[@]
 
-	local go_microformats=("go/microformats" "go run harness/go/microformats/preflight-check.go" "" "go/microformats|harness/go/microformats/mf2")
-	check_language "Go" "go" "" go_microformats[@]
+	local go_microformats=("go/microformats" "go run harness/go/microformats/preflight-check.go" "https://godoc.org/willnorris.com/go/microformats" "go/microformats|harness/go/microformats/mf2")
+	check_language "Go" "go" "https://golang.org/doc/install" go_microformats[@]
 	
 	[[ -f "$tower_checklist" ]] && rm "$tower_checklist"
 	
