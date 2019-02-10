@@ -4,18 +4,19 @@ Parse all the things! Time all the parsing! Diff all the JSON!
 ## In Active Development
 The mf2bench software is in active development and has undergone limited testing.
 
-| Operating System | OS Version | mf2bench Version | Does it work? | Reported By |
-| ---------------- | ----------:| ----------------:|:-------------:| ----------- |
-| Debian           | 10         | 0.1.0            | Nope          | [CJW](https://cjwillcock.ca/) |
-| Debian           | 9.6        | 0.1.0            | Nope          | [CJW](https://cjwillcock.ca/) |
+| High Score | Operating System | OS Version | mf2bench Version | Does it work? | Reported By |
+| ---------- | ---------------- | ----------:| ----------------:|:-------------:| ----------- |
+| x / ?      | Debian           | 10         | dev              | Nope          | [CJW](https://cjwillcock.ca/) |
+| 2 / 5      | Debian           | 9.7        | unreleased       | Nope          | [CJW](https://cjwillcock.ca/) |
 
 Only the latest mf2bench version tested on a given OS & Version is listed here. For the complete list of contributing reports, and reporters, see [Acknowledgements](#acknowledgements).
 
 Kindly consider notifying [the author](https://cjwillcock.ca/) if you have success, or difficulty, with the various OS options. See [Contributing](#contributing) for a preferred venue.
 
 ## Installation
-1. Clone this repository to a local folder.
+1. Clone this repository to a local folder: `git clone https://code.cjwillcock.ca/experiments/mf2bench.git ~/mf2bench && cd ~/mf2bench`.
 2. Run the preflight check: `./preflight-check.sh`.
+   * (optionally) without using terminal color: `MONO=1 ./preflight-check.sh`
 3. Add source URLs for the HTML to use for benchmarking.
    * To use the HTML from cjwillcock.ca: `mkdir var/sources/cjwillcock.ca`
    * Replace URL path separators with a triple underscore.
