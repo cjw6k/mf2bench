@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## Unreleased
 
 ### Added
+- node/microformats-node
+- go/microformats
+- python/mf2py
+- Pre-flight check confirms node is available
 - Script to refresh-sources anytime
 - php/php-mf2 w/ Masterminds HTML5
 - php/php-mf2

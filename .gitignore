@@ -1,2 +1,4 @@
 .mf2bench.conf
 preflight-safety-checklist.txt
+var/sources/*/*
+var/timing
