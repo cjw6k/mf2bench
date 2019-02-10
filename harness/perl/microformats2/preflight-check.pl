@@ -1,0 +1,1 @@
+use Web::Microformats2;

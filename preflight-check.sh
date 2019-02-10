@@ -114,6 +114,15 @@ main() {
 	check_language "Go" "go" \
 		"https://golang.org/doc/install" \
 		go_microformats[@]
+		
+	local perl_microformats2=("perl/microformats2" \
+		"perl harness/perl/microformats2/preflight-check.pl" \
+		"https://metacpan.org/pod/release/JMAC/Web-Microformats2-0.3/lib/Web/Microformats2.pm" \
+		"perl/microformats2|perl harness/perl/microformats2/mf2.pl" \
+	)
+	check_language "Perl" "perl" \
+		"https://www.perl.org/get.html" \
+		perl_microformats2[@]
 
 	[[ -f "$tower_checklist" ]] && rm "$tower_checklist"
 
