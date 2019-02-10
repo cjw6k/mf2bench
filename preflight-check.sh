@@ -74,7 +74,7 @@ main() {
 	local go_microformats=("go/microformats" "go run harness/go/microformats/preflight-check.go" "" "go/microformats|harness/go/microformats/mf2")
 	check_language "Go" "go" "" go_microformats[@]
 	
-	rm "$tower_checklist"
+	[[ -f "$tower_checklist" ]] && rm "$tower_checklist"
 	
 	echo
 	if [[ 0 -lt "${#parsers[@]}" ]]; then
