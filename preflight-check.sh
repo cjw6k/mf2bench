@@ -43,9 +43,10 @@ check_language() {
 			idy=$(( $idy + 1 ))
 			echo " * ${parser_color}${parser[0]}?${reset}"
 			[[ ! -f "harness/${parser[0]}" ]] && mkdir -p "harness/${parser[0]}"
-			${parser[1]} 2>"$tower_checklist"
+
+			$(eval "${parser[1]}" 2>"$tower_checklist")
 			if [[ $? -ne 0 ]]; then
-				echo "$e_color"`cat "$tower_checklist"`"$reset" | cowsay -W 120 -p
+				echo "${e_color}`cat $tower_checklist`${reset}" | cowsay -W 120 -p
 				echo "    ${nogo_color}No go flight.${reset} See ${parser[2]}"
 			else
 				parsers[$idx]="${parser[3]};"
@@ -114,7 +115,7 @@ main() {
 	check_language "Go" "go" \
 		"https://golang.org/doc/install" \
 		go_microformats[@]
-		
+
 	local perl_microformats2=("perl/microformats2" \
 		"perl harness/perl/microformats2/preflight-check.pl" \
 		"https://metacpan.org/pod/release/JMAC/Web-Microformats2-0.3/lib/Web/Microformats2.pm" \
@@ -123,6 +124,15 @@ main() {
 	check_language "Perl" "perl" \
 		"https://www.perl.org/get.html" \
 		perl_microformats2[@]
+
+	local elixir_microformats2=("elixir/microformats2" \
+		"cd harness/elixir/microformats2; mix PreflightCheck > /dev/null" \
+		"https://hex.pm/packages/microformats2" \
+		"elixir/microformats2|harness/elixir/microformats2/mf2" \
+	)
+	check_language "Elixir" "elixir" \
+		"https://elixir-lang.org/install.html" \
+		elixir_microformats2[@]
 
 	[[ -f "$tower_checklist" ]] && rm "$tower_checklist"
 

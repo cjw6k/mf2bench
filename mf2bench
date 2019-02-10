@@ -5,6 +5,8 @@ if [[ -z $MONO ]]; then
 	source_pad_color=$(printf '\e[38;5;23m')
 	parser_color=$(printf '\e[38;5;173m')
 	parser_pad_color=$(printf '\e[38;5;235m')
+	parser_fail_color=$(printf '\e[38;5;94m')
+	fail_color=$(printf '\e[38;5;240m')
 	reset=$(printf '\e[0m')
 fi
 
@@ -18,17 +20,26 @@ parsers=$(cat .mf2bench.conf)
 
 report() {
 	pad="."
-	padlength=50
+	padlength=53
 
-	echo -n "${parser_color}$1${parser_pad_color} "
+	if [[ -n $3 ]]; then
+		echo -n "${parser_fail_color}$1${parser_pad_color} "
+	else
+		echo -n "${parser_color}$1${parser_pad_color} "
+	fi
+
 	pad_count=$(( $padlength - ${#1} - ${#2} - 2 ))
-	
+
 	while [ $pad_count -gt 0 ]; do
 		pad_count=$(( $pad_count - 1 ))
 		echo -n "$pad"
 	done
-	
-	printf "${reset} %s µs\n" "$2"
+
+	if [[ -n $3 ]]; then
+		printf "${reset} ${fail_color}%s${reset}\n" "$2"
+	else
+		printf "${reset} %s\n" "$2"
+	fi
 }
 
 [[ -d var/timing ]] && rm -r var/timing
@@ -55,13 +66,13 @@ for sample in var/sources/*; do
 			if [[ 0 -eq $flipflop ]]; then
 				flipflop=1
 				name=$(echo -e "${sub}" | tr -d '[:space:]')
-			else 
+			else
 				flipflop=0
 				exec=$(echo -e "${sub}")
 			fi
 		done
 		IFS=$OLD_IFS
-		
+
 		if [[ 0 -eq $flipflop ]]; then
 			[[ ! -d "$sample/$name" ]] && mkdir -p "$sample/$name"
 			[[ ! -d "var/timing/$name" ]] && mkdir -p "var/timing/$name"
@@ -70,11 +81,11 @@ for sample in var/sources/*; do
 				stat=$(ministat "$sample/$name/timing" -A)
 				average=$(echo "$stat" | tail -n 1 | awk '{print($6)}')
 				printf -v result "%0.f" $average
-				report $name $result
+				report $name "$result µs"
 				echo "$average" >>  "var/timing/$name/timing"
 			else
-				echo "$name FAIL"
-			fi			
+				report $name "FAIL" 1
+			fi
 		fi
 	done
 	echo -e "${source_pad_color}-----------------------------------------------------${reset}\n"
@@ -82,8 +93,12 @@ for sample in var/sources/*; do
 done
 
 if [[ 2 -lt $idx ]]; then
-	for timing in "var/timing/*/*/*"; do
-		data="$data$timing"
+	data=()
+	idz=0
+	for timing in var/timing/*/*/*; do
+		data[$idz]="$timing"
+		idz=$(( $idz + 1 ))
+		[[ $idz -gt 6 ]] && break
 	done
-	ministat $data -s
+	ministat ${data[@]} -s
 fi
