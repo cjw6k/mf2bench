@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## Unreleased
 
 ### Added
+- Script to refresh-sources anytime
 - php/php-mf2 w/ Masterminds HTML5
 - php/php-mf2
 - Complex pre-flight check confirms languages and ready parsers in those languages are available
