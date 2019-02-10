@@ -1,12 +1,12 @@
 # mf2bench
-Parse all the things! Time all the parsing! Diff all the JSON!
+Parse all the things! Time all the parsing! ~~Diff all the JSON!~~
 
 ## In Active Development
 The mf2bench software is in active development and has undergone limited testing.
 
 | High Score | Operating System | OS Version | mf2bench Version | Does it work? | Reported By |
 | ---------- | ---------------- | ----------:| ----------------:|:-------------:| ----------- |
-| 8 / 8      | Debian           | 10         | dev              | Yep           | [CJW](https://cjwillcock.ca/) |
+| 9 / 9      | Debian           | 10         | dev              | Yep           | [CJW](https://cjwillcock.ca/) |
 | 2 / 5      | Debian           | 9.7        | unreleased       | Nope          | [CJW](https://cjwillcock.ca/) |
 
 Only the latest mf2bench version tested on a given OS & Version is listed here. For the complete list of contributing reports, and reporters, see [Acknowledgements](#acknowledgements).
