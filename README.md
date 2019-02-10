@@ -24,7 +24,8 @@ Kindly consider notifying [the author](https://cjwillcock.ca/) if you have succe
    * Refresh the source samples: `./refresh-sources.sh`.
 4. Run the benchmarks, specifying the number of samples per-source per-parser as the only parameter.
    * To parse each source ten (10) times with each parser: `./mf2bench 10`.
-   * If the samples parameter is left out, mf2bench will use a default of three (3).
+     * If the samples parameter is left out, mf2bench will use a default of three (3).
+     * (optionally) without using terminal color: `MONO=1 ./mf2bench`
 
 ## Contributing
 Discussion in:
