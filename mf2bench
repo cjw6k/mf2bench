@@ -1,0 +1,89 @@
+#!/bin/bash
+
+if [[ -z $MONO ]]; then
+	source_color=$(printf '\e[38;5;118m')
+	source_pad_color=$(printf '\e[38;5;23m')
+	parser_color=$(printf '\e[38;5;173m')
+	parser_pad_color=$(printf '\e[38;5;235m')
+	reset=$(printf '\e[0m')
+fi
+
+if [[ -z $1 ]]; then
+	iterations=3
+else
+	iterations=$1
+fi
+
+parsers=$(cat .mf2bench.conf)
+
+report() {
+	pad="."
+	padlength=50
+
+	echo -n "${parser_color}$1${parser_pad_color} "
+	pad_count=$(( $padlength - ${#1} - ${#2} - 2 ))
+	
+	while [ $pad_count -gt 0 ]; do
+		pad_count=$(( $pad_count - 1 ))
+		echo -n "$pad"
+	done
+	
+	printf "${reset} %s µs\n" "$2"
+}
+
+[[ -d var/timing ]] && rm -r var/timing
+
+idx=0
+for sample in var/sources/*; do
+	idx=$(( $idx + 1))
+	domain=${sample#"var/sources/"}
+	simple_identity="$(echo $domain | sed 's/___/\//')"
+	echo -en "${source_pad_color}=====================================================\r"
+	si_padding=$(( ( 53 - ${#simple_identity} ) / 2 ))
+	while [ $si_padding -gt 0 ]; do
+		echo -n "="
+		si_padding=$(( $si_padding - 1 ))
+	done
+	echo " ${source_color}$simple_identity${reset} "
+	OLD_IFS=$IFS
+	IFS=";"
+	for parser in ${parsers[@]}; do
+		OLD_IFS=$IFS
+		IFS="|"
+		flipflop=0
+		for sub in ${parser[@]}; do
+			if [[ 0 -eq $flipflop ]]; then
+				flipflop=1
+				name=$(echo -e "${sub}" | tr -d '[:space:]')
+			else 
+				flipflop=0
+				exec=$(echo -e "${sub}")
+			fi
+		done
+		IFS=$OLD_IFS
+		
+		if [[ 0 -eq $flipflop ]]; then
+			[[ ! -d "$sample/$name" ]] && mkdir -p "$sample/$name"
+			[[ ! -d "var/timing/$name" ]] && mkdir -p "var/timing/$name"
+			eval "$exec $sample/html http://$(echo $domain | sed 's/___/\//') $iterations" > "$sample/$name/timing" 2>/dev/null
+			if [[ $? -eq 0 ]]; then
+				stat=$(ministat "$sample/$name/timing" -A)
+				average=$(echo "$stat" | tail -n 1 | awk '{print($6)}')
+				printf -v result "%0.f" $average
+				report $name $result
+				echo "$average" >>  "var/timing/$name/timing"
+			else
+				echo "$name FAIL"
+			fi			
+		fi
+	done
+	echo -e "${source_pad_color}-----------------------------------------------------${reset}\n"
+	IFS=$OLD_IFS
+done
+
+if [[ 2 -lt $idx ]]; then
+	for timing in "var/timing/*/*/*"; do
+		data="$data$timing"
+	done
+	ministat $data -s
+fi
