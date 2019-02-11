@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## 0.1.0
 ### Added
+- php-ext/mf2 parser
 - haskell/microformats2-parser
 - elixir/microformats2
 - perl/microformats2
