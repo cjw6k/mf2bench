@@ -20,6 +20,8 @@ else
 	reset=$(printf '\e[0m')
 fi
 
+with_cowsay=$(which cowsay)
+
 check_language() {
 	echo "${language_color}$1?${reset}"
 	command -v "$2" > /dev/null
@@ -46,7 +48,12 @@ check_language() {
 
 			$(eval "${parser[1]}" 2>"$tower_checklist")
 			if [[ $? -ne 0 ]]; then
-				echo "${e_color}`cat $tower_checklist`${reset}" | cowsay -W 120 -p
+				tmp="${e_color}`cat $tower_checklist`${reset}"
+				if [[ -n $with_cowsay ]]; then
+					echo "$tmp" | cowsay -W 120 -p
+				else
+					echo "$tmp"
+				fi
 				echo "    ${nogo_color}No go flight.${reset} See ${parser[2]}"
 			else
 				parsers[$idx]="${parser[3]};"
