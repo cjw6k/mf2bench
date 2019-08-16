@@ -1,5 +1,8 @@
 #!/bin/bash
 
+with_cowsay=$(which cowsay)
+[[ $? -ne 0 ]] && echo -e "\nNOTE: preflight is better with cowsay\n      https://en.wikipedia.org/wiki/Cowsay\n"
+
 if [[ -n $MONO ]]; then
 	language_color=
 	parser_color=
@@ -19,8 +22,6 @@ else
 	o_color=$(printf '\e[38;5;186m')
 	reset=$(printf '\e[0m')
 fi
-
-with_cowsay=$(which cowsay)
 
 check_language() {
 	echo "${language_color}$1?${reset}"

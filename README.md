@@ -13,6 +13,10 @@ Only the latest mf2bench version tested on a given OS & Version is listed here. 
 
 Kindly consider notifying [the author](https://cjwillcock.ca/) if you have success, or difficulty, with the various OS options. See [Contributing](#contributing) for a preferred venue.
 
+## Prerequisites
+1. [ministat](https://github.com/codahale/ministat) - check your package manager
+2. [cowsay](https://en.wikipedia.org/wiki/Cowsay) (optional) - check your pacakge manager
+
 ## Installation
 1. Clone this repository to a local folder: `git clone https://code.cjwillcock.ca/experiments/mf2bench.git ~/mf2bench && cd ~/mf2bench`.
 2. Run the preflight check: `./preflight-check.sh`.

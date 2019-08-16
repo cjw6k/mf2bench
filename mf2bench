@@ -1,5 +1,8 @@
 #!/bin/bash
 
+with_ministat=$(which ministat)
+[[ $? -ne 0 ]] && echo -e "\nNOTE: mf2bench requires ministat\n      https://github.com/codahale/ministat\n" && exit 1
+
 if [[ -z $MONO ]]; then
 	source_color=$(printf '\e[38;5;118m')
 	source_pad_color=$(printf '\e[38;5;23m')
@@ -100,5 +103,5 @@ if [[ 2 -lt $idx ]]; then
 		idz=$(( $idz + 1 ))
 		[[ $idz -gt 6 ]] && break
 	done
-	ministat ${data[@]} -s
+	[[ -n $with_ministat ]] && ministat ${data[@]} -s
 fi
