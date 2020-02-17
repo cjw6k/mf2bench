@@ -64,28 +64,31 @@ for sample in var/sources/*; do
 	for parser in ${parsers[@]}; do
 		OLD_IFS=$IFS
 		IFS="|"
-		flipflop=0
+		selector=0
 		for sub in ${parser[@]}; do
-			if [[ 0 -eq $flipflop ]]; then
-				flipflop=1
+			if [[ 0 -eq $selector ]]; then
 				name=$(echo -e "${sub}" | tr -d '[:space:]')
+			elif [[ 1 -eq $selector  ]]; then
+				time_exec=$(echo -e "${sub}")
 			else
-				flipflop=0
-				exec=$(echo -e "${sub}")
+				json_exec=$(echo -e "${sub}")
 			fi
+			selector=$(( $selector + 1 ))
 		done
 		IFS=$OLD_IFS
 
-		if [[ 0 -eq $flipflop ]]; then
+		if [[ 3 -eq $selector ]]; then
 			[[ ! -d "$sample/$name" ]] && mkdir -p "$sample/$name"
 			[[ ! -d "var/timing/$name" ]] && mkdir -p "var/timing/$name"
-			eval "$exec $sample/html http://$(echo $domain | sed 's/___/\//') $iterations" > "$sample/$name/timing" 2>/dev/null
+			eval "$time_exec $sample/html http://$(echo $domain | sed 's/___/\//') $iterations" > "$sample/$name/timing" 2>/dev/null
 			if [[ $? -eq 0 ]]; then
+				eval "$json_exec $sample/html http://$(echo $domain | sed 's/___/\//') 0" > "$sample/$name/json" 2>/dev/null
 				stat=$(ministat "$sample/$name/timing" -A)
 				average=$(echo "$stat" | tail -n 1 | awk '{print($6)}')
 				printf -v result "%0.f" $average
 				report $name "$result µs"
 				echo "$average" >>  "var/timing/$name/timing"
+
 			else
 				report $name "FAIL" 1
 			fi

@@ -76,7 +76,7 @@ main() {
 	local ruby_microformats=("ruby/microformats-ruby" \
 		"ruby harness/ruby/microformats-ruby/preflight-check.rb" \
 		"https://rubygems.org/gems/microformats" \
-		"ruby/microformats-ruby|ruby harness/ruby/microformats-ruby/mf2.rb" \
+		"ruby/microformats-ruby|ruby harness/ruby/microformats-ruby/mf2.rb|ruby harness/ruby/microformats-ruby/mf2-json.rb" \
 	)
 	check_language "Ruby" "ruby" \
 		"https://www.ruby-lang.org/en/documentation/installation/" \
@@ -85,7 +85,7 @@ main() {
 	local python_mf2py=("python/mf2py" \
 		"python3 harness/python/mf2py/preflight-check.py" \
 		"https://pypi.org/project/mf2py/" \
-		"python/mf2py|python3 harness/python/mf2py/mf2.py" \
+		"python/mf2py|python3 harness/python/mf2py/mf2.py|python3 harness/python/mf2py/mf2-json.py" \
 	)
 	check_language "Python3" "python3" \
 		"https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python" \
@@ -94,12 +94,12 @@ main() {
 	local php_mf2=("php/php-mf2" \
 		"php harness/php/php-mf2/preflight-check.php" \
 		"https://packagist.org/packages/mf2/mf2" \
-		"php/php-mf2|php harness/php/php-mf2/mf2.php" \
+		"php/php-mf2|php harness/php/php-mf2/mf2.php|php harness/php/php-mf2/mf2-json.php" \
 	)
 	local php_mf2_mm_html5=("php/php-mf2-mm-html5" \
 		"php harness/php/php-mf2-mm-html5/preflight-check.php" \
 		"https://packagist.org/packages/masterminds/html5" \
-		"php/php-mf2-mm-html5|php harness/php/php-mf2-mm-html5/mf2.php" \
+		"php/php-mf2-mm-html5|php harness/php/php-mf2-mm-html5/mf2.php|php harness/php/php-mf2-mm-html5/mf2-json.php" \
 	)
 	check_language "PHP" "php" \
 		"http://php.net/manual/en/install.php" \
@@ -109,7 +109,7 @@ main() {
 	local node_microformats_parser=("node/microformats-parser" \
 		"node harness/node/microformats-parser/preflight-check.js" \
 		"https://www.npmjs.com/package/microformat-node" \
-		"node/microformats-parser|node harness/node/microformats-parser/mf2.js" \
+		"node/microformats-parser|node harness/node/microformats-parser/mf2.js|node harness/node/microformats-parser/mf2-json.js" \
 	)
 	check_language "Node" "node" \
 		"https://nodejs.org/en/download/package-manager/" \
@@ -118,16 +118,22 @@ main() {
 	local go_microformats=("go/microformats" \
 		"go run harness/go/microformats/preflight-check.go" \
 		"https://godoc.org/willnorris.com/go/microformats" \
-		"go/microformats|harness/go/microformats/mf2.sh" \
+		"go/microformats|harness/go/microformats/mf2.sh|harness/go/microformats/mf2-json" \
+	)
+	local go_andyleap_microformats=("go/andyleap-microformats" \
+		"go run harness/go/andyleap-microformats/preflight-check.go" \
+		"https://github.com/andyleap/microformats" \
+		"go/andyleap-microformats|harness/go/andyleap-microformats/mf2.sh|harness/go/andyleap-microformats/mf2-json" \
 	)
 	check_language "Go" "go" \
 		"https://golang.org/doc/install" \
-		go_microformats[@]
+		go_microformats[@] \
+		go_andyleap_microformats[@]
 
 	local perl_microformats2=("perl/microformats2" \
 		"perl harness/perl/microformats2/preflight-check.pl" \
 		"https://metacpan.org/pod/release/JMAC/Web-Microformats2-0.3/lib/Web/Microformats2.pm" \
-		"perl/microformats2|perl harness/perl/microformats2/mf2.pl" \
+		"perl/microformats2|perl harness/perl/microformats2/mf2.pl|perl harness/perl/microformats2/mf2-json.pl" \
 	)
 	check_language "Perl" "perl" \
 		"https://www.perl.org/get.html" \
@@ -136,16 +142,16 @@ main() {
 	local elixir_microformats2=("elixir/microformats2" \
 		"cd harness/elixir/microformats2; mix PreflightCheck > /dev/null" \
 		"https://hex.pm/packages/microformats2" \
-		"elixir/microformats2|harness/elixir/microformats2/mf2" \
+		"elixir/microformats2|harness/elixir/microformats2/mf2|harness/elixir/microformats2/mf2" \
 	)
 	check_language "Elixir" "elixir" \
 		"https://elixir-lang.org/install.html" \
 		elixir_microformats2[@]
 
 	local haskell_microformats2_parser=("haskell/microformats2-parser" \
-		"cd harness/haskell/microformats2-parser; stack exec preflight-check && if [[ ! -f mf2 ]]; then echo 'Create a symbolic link to the mf2 executable in harness/haskell/microformats2-parser' 1>&2 && return 1; fi" \
+		"cd harness/haskell/microformats2-parser; stack exec preflight-check && if [[ ! -f mf2 ]]; then echo 'Create symbolic links to the mf2 and mf2-json executables in harness/haskell/microformats2-parser' 1>&2 && return 1; fi" \
 		"https://hackage.haskell.org/package/microformats2-parser" \
-		"haskell/microformats2-parser|harness/haskell/microformats2-parser/mf2" \
+		"haskell/microformats2-parser|harness/haskell/microformats2-parser/mf2|harness/haskell/microformats2-parser/mf2-json" \
 	)
 	check_language "Haskell" "ghci" \
 		"https://www.haskell.org/platform/linux.html" \

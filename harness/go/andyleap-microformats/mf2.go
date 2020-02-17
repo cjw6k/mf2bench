@@ -1,7 +1,7 @@
 package main
 
 import (
-	"willnorris.com/go/microformats"
+	"github.com/andyleap/microformats"
 	"os"
 	"io"
 	"net/url"
@@ -21,9 +21,10 @@ func main() {
 	r, _ = os.Open(os.Args[1])
 	u, _ := url.Parse(os.Args[2])
 
+	parser := microformats.New()
 	//for idx := 0; idx < 10; idx++ {
 		start := time.Now()
-		_ = microformats.Parse(r, u)
+		_ = parser.Parse(r, u)
 		elapsed := time.Now().Sub(start)
 		fmt.Println(elapsed.Nanoseconds() / 1000)
 	//}
