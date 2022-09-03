@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## UNRELEASED
 ### Changed
 - mf2bench will not run without ministat
+- relicensed this work to CC0 1.0
 
 ### Fixed
 - error in output without cowsay program installed, now skips calling cowsay
@@ -29,4 +30,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Simple pre-flight check confirms ruby, python3, golang and php are available
 - This CHANGELOG.md to track what's happening with this software.
 - An altogether too brief [README.md](README.md).
-- Licensed (MIT) this work, see [LICENSE.md](LICENSE.md) for details.
+- Licensed (MIT)* this work, see [LICENSE.md](LICENSE.md) for details.
+
+\* the license was changed to CC0 1.0 on [2022-09-02 by cjw6k](https://github.com/cjw6k/mf2bench/commit/621bfef7bd9339c29321c1b00ac126dbfaeadbba)
