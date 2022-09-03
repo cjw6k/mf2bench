@@ -2,8 +2,7 @@
 preflight-safety-checklist.txt
 .idea/
 var/sources/.source-refresh
-var/sources/*/*
+var/sources/*
 !var/sources/cj.w6k.ca
-!var/sources/indieweb.org
-!var/sources/microformats.org
+var/sources/cj.w6k.ca/html
 var/timing
