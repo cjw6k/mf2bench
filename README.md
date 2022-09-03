@@ -35,7 +35,7 @@ Only the latest mf2bench version tested on a given OS & Version is listed here.
 
 ## Contributing
 Discussion in:
-* #microformats on irc.freenode.net [(chat logs)](https://chat.indieweb.org/microformats)
+* #microformats, see https://indieweb.org/discuss
 
 ## Changelog
 All notable changes to this project will be documented in [CHANGELOG.md](CHANGELOG.md).
