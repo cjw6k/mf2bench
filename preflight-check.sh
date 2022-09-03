@@ -1,8 +1,5 @@
 #!/bin/bash
 
-with_cowsay=$(which cowsay)
-[[ $? -ne 0 ]] && echo -e "\nNOTE: preflight is better with cowsay\n      https://en.wikipedia.org/wiki/Cowsay\n"
-
 if [[ -n $MONO ]]; then
 	language_color=
 	parser_color=
@@ -50,11 +47,7 @@ check_language() {
 			$(eval "${parser[1]}" 2>"$tower_checklist")
 			if [[ $? -ne 0 ]]; then
 				tmp="${e_color}`cat $tower_checklist`${reset}"
-				if [[ -n $with_cowsay ]]; then
-					echo "$tmp" | cowsay -W 120 -p
-				else
-					echo "$tmp"
-				fi
+				echo "$tmp"
 				echo "    ${nogo_color}No go flight.${reset} See ${parser[2]}"
 			else
 				parsers[$idx]="${parser[3]};"

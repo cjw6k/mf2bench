@@ -1,5 +1,6 @@
 .mf2bench.conf
 preflight-safety-checklist.txt
+.idea/
 var/sources/*/*
 !var/sources/*/.gitignore
 var/timing
