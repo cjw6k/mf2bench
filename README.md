@@ -10,19 +10,19 @@ To show your support for this project consider [adding your domain](var/sources/
 ## Prerequisites
 1. [ministat](https://github.com/codahale/ministat) - check your package manager
 
-## Installation
-1. Clone this repository to a local folder: `git clone https://code.cjwillcock.ca/experiments/mf2bench.git ~/mf2bench && cd ~/mf2bench`.
-2. Run the preflight check: `./preflight-check.sh`.
+## Ready, Set, Parse
+1. Run the preflight check: `./preflight-check.sh`.
    * (optionally) without using terminal color: `MONO=1 ./preflight-check.sh`
-3. Add source URLs for the HTML to use for benchmarking.
-   * To use the HTML from example.com: `mkdir var/sources/example.com`
-   * Replace URL path separators with a triple underscore.
-     * To use the HTML from example.com/now: `mkdir /var/sources/example.com___now`.
-   * Refresh the source samples: `./refresh-sources.sh`.
-4. Run the benchmarks, specifying the number of samples per-source per-parser as the only parameter.
+2. Refresh the source samples: `./refresh-sources.sh`.
+3. Run the benchmarks: `./mf2bench`
+   * (optionally) without using terminal color: `MONO=1 ./mf2bench`
    * To parse each source ten (10) times with each parser: `./mf2bench 10`.
-     * If the samples parameter is left out, mf2bench will use a default of three (3).
-     * (optionally) without using terminal color: `MONO=1 ./mf2bench`
+   * If the samples parameter is left out, mf2bench will use a default of three (3).
+
+## Adding More Sources
+* To use the HTML from example.com: `mkdir var/sources/example.com`
+* Replace URL path separators with a triple underscore.
+  * To use the HTML from example.com/now: `mkdir /var/sources/example.com___now`.
 
 ## Contributing
 Discussion in:
