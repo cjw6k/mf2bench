@@ -27,3 +27,4 @@ distclean:
 > rm -f var/sources/.source-refresh
 > rm -rf var/sources/*
 > mkdir var/sources/cj.w6k.ca
+> touch var/sources/cj.w6k.ca/.gitkeep
