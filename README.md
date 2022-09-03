@@ -1,7 +1,11 @@
 # mf2bench
 Parse all the things! Time all the parsing!
 
-To show your support for this project consider [adding your domain](var/how_to_add_another_domain.md) to the list of sources parsed during the benchmarks, add a row the results table below, and take a look at the current open issues to see what needs help.
+To show your support for this project consider [adding your domain](var/how_to_add_another_domain.md) to the list of sources parsed during the benchmarks. If you're here for the code, try adding a row to the results table below!
+
+Parser Authors: [open an issue](https://github.com/cjw6k/mf2bench/issues) to organize a new parser harness, or PR it up!
+
+Check the current open issues to see what needs help.
 
 | High Score | Operating System   | OS Version | mf2bench Version | Does it work? | Reported By |
 | ---------- | ------------------ | ----------:| ----------------:|:-------------:| ----------- |
