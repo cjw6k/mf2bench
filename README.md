@@ -7,10 +7,6 @@ Parser Authors: [open an issue](https://github.com/cjw6k/mf2bench/issues) to org
 
 Check the current open issues to see what needs help.
 
-| High Score | Operating System   | OS Version | mf2bench Version | Does it work? | Reported By |
-| ---------- | ------------------ | ----------:| ----------------:|:-------------:| ----------- |
-| 2 / 9      | win11/wsl2: gentoo | sync +24h  | branch: main     | Yep           | [cjw6k](https://cj.w6k.ca/) |
-
 ## Prerequisites
 1. [ministat](https://github.com/codahale/ministat) - check your package manager
 
