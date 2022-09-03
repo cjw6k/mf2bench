@@ -2,7 +2,7 @@
 Parse all the things! Time all the parsing! ~~Diff all the JSON!~~
 
 ## In Active Development
-The mf2bench software lately back on the workbench, old work ahead! 
+The mf2bench software is only but lately back on the workbench and was made fast. It's rough!
 
 > <strong>NOTE:</strong> mf2bench has undergone limited testing.
 
