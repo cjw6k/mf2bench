@@ -1,4 +1,4 @@
-Hiya! So cool you are here. You must be familiar with the Indieweb and your
+Hiya! So cool you are here. You must be familiar with the [Indieweb](https://indieweb.org/) and your
 request must include only the domain you own of your own user account! ^_^
 
 By contributing your domain name to the list found here, you retain the right
