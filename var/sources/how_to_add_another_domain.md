@@ -1,5 +1,5 @@
-Hiya! So cool you are here. You must be familiar with the Indieweb and your PR
-must include only the domain you own of your own user account! ^_^
+Hiya! So cool you are here. You must be familiar with the Indieweb and your
+request must include only the domain you own of your own user account! ^_^
 
 By contributing your domain name to the list found here, you retain the right
 to have it immediately removed in a PR published by you or by a designate. If
@@ -15,4 +15,8 @@ IMPORTANT: Automations will keep the benchmarks updated and may evaluate the
            and benchmark processes of this software on a regular and recurring
            basis.
 
-All qualifying PRs will be quickly approved!
+
+You may send a patch to the current project secretary for consideration. All
+qualifying requests will be quickly approved!
+
+Github users: PR's are open.
