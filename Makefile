@@ -21,6 +21,7 @@ var/sources/.source-refresh: $(shell find var/sources -type d)
 .PHONY: clean distclean
 clean:
 > rm -rf var/sources/*/html
+> rm -f .mf2bench.conf
 
 distclean:
 > rm -f .mf2bench.conf
