@@ -17,7 +17,7 @@ Kindly consider notifying [the author](https://cjwillcock.ca/) if you have succe
 
 ## Prerequisites
 1. [ministat](https://github.com/codahale/ministat) - check your package manager
-2. [cowsay](https://en.wikipedia.org/wiki/Cowsay) (optional) - check your pacakge manager
+2. [cowsay](https://en.wikipedia.org/wiki/Cowsay) (optional) - check your package manager
 
 ## Installation
 1. Clone this repository to a local folder: `git clone https://code.cjwillcock.ca/experiments/mf2bench.git ~/mf2bench && cd ~/mf2bench`.
