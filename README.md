@@ -28,14 +28,5 @@ Check the current open issues to see what needs help.
 * Replace URL path separators with a triple underscore.
   * To use the HTML from example.com/now: `mkdir /var/sources/example.com___now`.
 
-## Contributing
-Discussion in:
-* #microformats, see https://indieweb.org/discuss
-
-## Changelog
-All notable changes to this project will be documented in [CHANGELOG.md](CHANGELOG.md).
-
 ## Acknowledgements
-The community that is [IndieWeb](https://indieweb.org/)!
-
-The community that is [Microformats](http://microformats.org/)!
+See [ACK.md](ACK.md)
