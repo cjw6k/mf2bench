@@ -1,7 +1,7 @@
 # mf2bench
 Parse all the things! Time all the parsing!
 
-To show your support for this project, consider [adding your domain](var/sources/how_to_add_another_domain.md) to the list of source parsed during the benchmarks.
+To show your support for this project, consider [adding your domain](var/sources/how_to_add_another_domain.md) to the list of sources parsed during the benchmarks.
 
 ## In Active Development
 The mf2bench software is only but lately back on the workbench and was made fast. It's rough!
