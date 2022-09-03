@@ -8,8 +8,8 @@ ifeq ($(origin .RECIPEPREFIX), undefined)
 endif
 .RECIPEPREFIX = >
 
-.PHONY: ready
-ready: .mf2bench.conf var/sources/.source-refresh
+.PHONY: make-ready
+make-ready: .mf2bench.conf var/sources/.source-refresh
 
 .mf2bench.conf:
 > ./preflight-check.sh
@@ -26,8 +26,4 @@ distclean:
 > rm -f .mf2bench.conf
 > rm -f var/sources/.source-refresh
 > rm -rf var/sources/*
-> rm -rf harness/php/php-mf2/vendor
-> rm -rf harness/php/php-mf2-mm-html5/vendor
 > mkdir var/sources/cj.w6k.ca
-> mkdir var/sources/indieweb.org
-> mkdir var/sources/microformats.org
