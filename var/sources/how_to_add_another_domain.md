@@ -3,8 +3,8 @@ must include only the domain you own of your own user account! ^_^
 
 By contributing your domain name to the list found here, you retain the right
 to have it immediately removed in a PR published by you or by a designate. If
-the PR method is not ready to you, by providing notice to the the current 
-project secretary.
+the PR method is not ready to you, by providing notice to the current project
+secretary.
 
 The current project secretary is: chris@lot2k.com, a.k.a. cjw6k in <a href="https://indieweb.org/discuss">#indieweb</a>.
 
