@@ -1,10 +1,9 @@
-Hiya! So cool you are here. You must be familiar with the [Indieweb](https://indieweb.org/) and your
-request must include only the domain you own of your own user account! ^_^
+Hiya! So cool you are here.
 
 By contributing your domain name to the list found here, you retain the right
 to have it immediately removed in a PR published by you or by a designate. If
-the PR method is not ready to you, by providing notice to the current project
-secretary.
+the PR method is not available to you, you may provide notice to the current
+project secretary.
 
 The current project secretary is: chris@lot2k.com, a.k.a. cjw6k in <a href="https://indieweb.org/discuss">#indieweb</a>.
 
@@ -14,7 +13,6 @@ IMPORTANT: Automations will keep the benchmarks updated and may evaluate the
            of some or all of your website will be in transport within the build
            and benchmark processes of this software on a regular and recurring
            basis.
-
 
 You may send a patch to the current project secretary for consideration. All
 qualifying requests will be quickly approved!
