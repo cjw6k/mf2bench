@@ -42,8 +42,3 @@ All notable changes to this project will be documented in [CHANGELOG.md](CHANGEL
 The community that is [IndieWeb](https://indieweb.org/)!
 
 The community that is [Microformats](http://microformats.org/)!
-
-## License
-Copyright © `2019` `Christopher James Willcock`
- 
-mf2bench is free software; you can redistribute it and/or modify it under the terms of the MIT License. See the [LICENSE.md](LICENSE.md) file for license rights and limitations (MIT).
