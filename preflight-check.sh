@@ -86,7 +86,6 @@ main() {
 #		"https://golang.org/doc/install" \
 #		...[@]
 #
-#
 #	check_language "Perl" "perl" \
 #		"https://www.perl.org/get.html" \
 #		...[@]
