@@ -17,7 +17,7 @@ To show your support for this project consider [adding your domain](var/sources/
 3. Run the benchmarks: `./mf2bench`
    * (optionally) without using terminal color: `MONO=1 ./mf2bench`
    * To parse each source ten (10) times with each parser: `./mf2bench 10`.
-   * If the samples parameter is left out, mf2bench will use a default of three (3).
+   * The default is three (3).
 
 ## Adding More Sources
 * To use the HTML from example.com: `mkdir var/sources/example.com`
