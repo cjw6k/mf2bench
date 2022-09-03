@@ -2,7 +2,9 @@
 Parse all the things! Time all the parsing! ~~Diff all the JSON!~~
 
 ## In Active Development
-The mf2bench software is in active development and has undergone limited testing.
+The mf2bench software lately back on the workbench, old work ahead! 
+
+> <strong>NOTE:</strong> mf2bench has undergone limited testing.
 
 | High Score | Operating System | OS Version | mf2bench Version | Does it work? | Reported By |
 | ---------- | ---------------- | ----------:| ----------------:|:-------------:| ----------- |
