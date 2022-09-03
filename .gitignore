@@ -1,6 +1,9 @@
 .mf2bench.conf
 preflight-safety-checklist.txt
 .idea/
+var/sources/.source-refresh
 var/sources/*/*
-!var/sources/*/.gitignore
+!var/sources/cj.w6k.ca
+!var/sources/indieweb.org
+!var/sources/microformats.org
 var/timing

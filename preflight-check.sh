@@ -152,8 +152,10 @@ main() {
 			echo "${parser}" >> .mf2bench.conf
 		done
 		echo "${launch_color}Go for mf2bench${reset} @ $idx/$idy."
+		exit 0
 	else
 		echo "${abort_color}Abort.${reset} No parsers are available."
+		exit 1
 	fi
 }
 
