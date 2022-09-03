@@ -10,8 +10,6 @@ To show your support for this project consider [adding your domain](var/sources/
 | 10 / 10    | Debian           | 10         | dev              | Yep           | [cjw6k](https://cj.w6k.ca/) |
 | 2 / 5      | Debian           | 9.7        | unreleased       | Nope          | [cjw6k](https://cj.w6k.ca/) |
 
-Only the latest mf2bench version tested on a given OS & Version is listed here.
-
 ## Prerequisites
 1. [ministat](https://github.com/codahale/ministat) - check your package manager
 2. [cowsay](https://en.wikipedia.org/wiki/Cowsay) (optional) - check your package manager
