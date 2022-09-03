@@ -3,8 +3,6 @@ Parse all the things! Time all the parsing!
 
 To show your support for this project consider [adding your domain](var/sources/how_to_add_another_domain.md) to the list of sources parsed during the benchmarks, add a row the results table below, and take a look at the current open issues to see what needs help.
 
-> <strong>NOTE:</strong> mf2bench has undergone limited testing.
-
 | High Score | Operating System   | OS Version | mf2bench Version | Does it work? | Reported By |
 | ---------- | ------------------ | ----------:| ----------------:|:-------------:| ----------- |
 | 2 / 9      | win11/wsl2: gentoo | sync +24h  | branch: main     | Yep           | [cjw6k](https://cj.w6k.ca/) |
