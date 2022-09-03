@@ -7,8 +7,7 @@ To show your support for this project consider [adding your domain](var/sources/
 
 | High Score | Operating System | OS Version | mf2bench Version | Does it work? | Reported By |
 | ---------- | ---------------- | ----------:| ----------------:|:-------------:| ----------- |
-| 10 / 10    | Debian           | 10         | dev              | Yep           | [cjw6k](https://cj.w6k.ca/) |
-| 2 / 5      | Debian           | 9.7        | unreleased       | Nope          | [cjw6k](https://cj.w6k.ca/) |
+| 2 / 9      | Gentoo           | sync +24h  | branch: main     | Yep           | [cjw6k](https://cj.w6k.ca/) |
 
 ## Prerequisites
 1. [ministat](https://github.com/codahale/ministat) - check your package manager
