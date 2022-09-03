@@ -1,7 +1,7 @@
 # mf2bench
 Parse all the things! Time all the parsing!
 
-To show your support for this project consider [adding your domain](var/sources/how_to_add_another_domain.md) to the list of sources parsed during the benchmarks.
+To show your support for this project consider [adding your domain](var/sources/how_to_add_another_domain.md) to the list of sources parsed during the benchmarks, add a row the results table below, and take a look at the current open issues to see what needs help.
 
 > <strong>NOTE:</strong> mf2bench has undergone limited testing.
 
