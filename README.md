@@ -7,8 +7,8 @@ To show your support for this project consider [adding your domain](var/sources/
 
 | High Score | Operating System | OS Version | mf2bench Version | Does it work? | Reported By |
 | ---------- | ---------------- | ----------:| ----------------:|:-------------:| ----------- |
-| 10 / 10    | Debian           | 10         | dev              | Yep           | [CJW](https://cjwillcock.ca/) |
-| 2 / 5      | Debian           | 9.7        | unreleased       | Nope          | [CJW](https://cjwillcock.ca/) |
+| 10 / 10    | Debian           | 10         | dev              | Yep           | [cjw6k](https://cj.w6k.ca/) |
+| 2 / 5      | Debian           | 9.7        | unreleased       | Nope          | [cjw6k](https://cj.w6k.ca/) |
 
 Only the latest mf2bench version tested on a given OS & Version is listed here.
 
