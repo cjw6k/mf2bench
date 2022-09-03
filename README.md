@@ -13,9 +13,7 @@ The mf2bench software is only but lately back on the workbench and was made fast
 | 10 / 10    | Debian           | 10         | dev              | Yep           | [CJW](https://cjwillcock.ca/) |
 | 2 / 5      | Debian           | 9.7        | unreleased       | Nope          | [CJW](https://cjwillcock.ca/) |
 
-Only the latest mf2bench version tested on a given OS & Version is listed here. For the complete list of contributing reports, and reporters, see [Acknowledgements](#acknowledgements).
-
-Kindly consider notifying [the author](https://cjwillcock.ca/) if you have success, or difficulty, with the various OS options. See [Contributing](#contributing) for a preferred venue.
+Only the latest mf2bench version tested on a given OS & Version is listed here.
 
 ## Prerequisites
 1. [ministat](https://github.com/codahale/ministat) - check your package manager
@@ -26,9 +24,9 @@ Kindly consider notifying [the author](https://cjwillcock.ca/) if you have succe
 2. Run the preflight check: `./preflight-check.sh`.
    * (optionally) without using terminal color: `MONO=1 ./preflight-check.sh`
 3. Add source URLs for the HTML to use for benchmarking.
-   * To use the HTML from cjwillcock.ca: `mkdir var/sources/cjwillcock.ca`
+   * To use the HTML from example.com: `mkdir var/sources/example.com`
    * Replace URL path separators with a triple underscore.
-     * To use the HTML from cjwillcock.ca/now: `mkdir /var/sources/cjwillcock.ca___now`.
+     * To use the HTML from example.com/now: `mkdir /var/sources/example.com___now`.
    * Refresh the source samples: `./refresh-sources.sh`.
 4. Run the benchmarks, specifying the number of samples per-source per-parser as the only parameter.
    * To parse each source ten (10) times with each parser: `./mf2bench 10`.
