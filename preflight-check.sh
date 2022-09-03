@@ -24,7 +24,7 @@ check_language() {
 	echo "${language_color}$1?${reset}"
 	command -v "$2" > /dev/null
 	if [[ $? -ne 0 ]]; then
-		echo " ${nogo_color}No go flight.${reset} $1 is required for a parser. See $3"
+		echo " ${nogo_color}Not good.${reset} $1 is required for a parser. See $3"
 		while [ ! -z $4 ]; do
 			declare -a parser=("${!4}")
 			shift
@@ -32,7 +32,7 @@ check_language() {
 			idy=$(( $idy + 1 ))
 		done
 	else
-		echo " ${go_color}Go flight.${reset}"
+		echo " ${go_color}Good.${reset}"
 
 		[[ ! -d "var/$2" ]] && mkdir -p "var/$2"
 
@@ -44,15 +44,15 @@ check_language() {
 			echo " * ${parser_color}${parser[0]}?${reset}"
 			[[ ! -f "harness/${parser[0]}" ]] && mkdir -p "harness/${parser[0]}"
 
-			$(eval "${parser[1]}" 2>"$tower_checklist")
+			$(eval "${parser[1]}" 2>"$log")
 			if [[ $? -ne 0 ]]; then
-				tmp="${e_color}`cat $tower_checklist`${reset}"
+				tmp="${e_color}`cat $log`${reset}"
 				echo "$tmp"
-				echo "    ${nogo_color}No go flight.${reset} See ${parser[2]}"
+				echo "    ${nogo_color}Not good.${reset} See ${parser[2]}"
 			else
 				parsers[$idx]="${parser[3]};"
 				idx=$(( $idx + 1 ))
-				echo "   ${go_color}Go flight.${reset}"
+				echo "   ${go_color}Good.${reset}"
 			fi
 		done
 	fi
@@ -62,7 +62,7 @@ main() {
 	idx=0
 	idy=0
 	parsers=()
-	tower_checklist="preflight-safety-checklist.txt"
+	log="preflight.log"
 
 	[[ -f .mf2bench.conf ]] && rm .mf2bench.conf
 
@@ -144,14 +144,14 @@ main() {
 		"https://www.haskell.org/platform/linux.html" \
 		haskell_microformats2_parser[@]
 
-	[[ -f "$tower_checklist" ]] && rm "$tower_checklist"
+	[[ -f "$log" ]] && rm "$log"
 
 	echo
 	if [[ 0 -lt "${#parsers[@]}" ]]; then
 		for parser in "${parsers[@]}"; do
 			echo "${parser}" >> .mf2bench.conf
 		done
-		echo "${launch_color}Go for mf2bench${reset} @ $idx/$idy."
+		echo "${launch_color}mf2bench${reset} @ $idx/$idy."
 	else
 		echo "${abort_color}Abort.${reset} No parsers are available."
 	fi
